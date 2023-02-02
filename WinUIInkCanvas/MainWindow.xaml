@@ -1,0 +1,82 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<windows:MicaWindow
+    x:Class="WinUIInkCanvas.MainWindow"
+    xmlns:WinUIEx="using:WinUIEx"
+    xmlns:windows="using:UnitedSets.Windows"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIInkCanvas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+        <StackPanel.Resources>
+            <local:InkingWindow x:Name="InkingWindow" PenSize="{x:Bind Selected.PenSize,Mode=OneWay}" PenColor="{x:Bind Selected.Color, Mode=OneWay}" HighlighterMode="{x:Bind Selected.IsHighlighter,Mode=OneWay}"/>
+        </StackPanel.Resources>
+        <Button VerticalAlignment="Center" Padding="6" PointerPressed="MoveWindowPressed" PointerMoved="MoveWindowMouseMove">
+            <SymbolIcon Symbol="{x:Bind Move}"/>
+        </Button>
+        <RadioButtons MaxColumns="100" VerticalAlignment="Center">
+            <RadioButtons.Resources>
+                <x:Double x:Key="RadioButtonsTopHeaderMargin">0</x:Double>
+            </RadioButtons.Resources>
+            <RadioButton x:Name="MouseButton" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Style="{StaticResource DefaultToggleButtonStyle}" MinWidth="0" Padding="6">
+                <SymbolIcon Symbol="{x:Bind MouseIcon}"/>
+            </RadioButton>
+            <RadioButton Style="{StaticResource DefaultToggleButtonStyle}" MinWidth="0" Padding="6" Checked="MarkerChecked">
+                <RadioButton.Background>
+                    <SolidColorBrush Color="{x:Bind Pen.Color, Mode=OneWay}" Opacity="0.5"/>
+                </RadioButton.Background>
+                <SymbolIcon Symbol="{x:Bind Marker}"/>
+            </RadioButton>
+            <RadioButton Style="{StaticResource DefaultToggleButtonStyle}" MinWidth="0" Padding="6" Checked="Marker2Checked">
+                <RadioButton.Background>
+                    <SolidColorBrush Color="{x:Bind Pen2.Color, Mode=OneWay}" Opacity="0.5"/>
+                </RadioButton.Background>
+                <SymbolIcon Symbol="{x:Bind Marker}"/>
+            </RadioButton>
+            <RadioButton Style="{StaticResource DefaultToggleButtonStyle}" MinWidth="0" Padding="6" Checked="HighlightChecked">
+                <RadioButton.Background>
+                    <SolidColorBrush Color="{x:Bind Highlight.Color, Mode=OneWay}" Opacity="0.5"/>
+                </RadioButton.Background>
+                <SymbolIcon Symbol="{x:Bind HighlightSymbol}"/>
+            </RadioButton>
+            <RadioButton Style="{StaticResource DefaultToggleButtonStyle}" MinWidth="0" Padding="6" Checked="Highlight2Checked">
+                <RadioButton.Background>
+                    <SolidColorBrush Color="{x:Bind Highlight2.Color, Mode=OneWay}" Opacity="0.5"/>
+                </RadioButton.Background>
+                <SymbolIcon Symbol="{x:Bind HighlightSymbol}"/>
+            </RadioButton>
+            <RadioButton Style="{StaticResource DefaultToggleButtonStyle}" IsChecked="{x:Bind InkingWindow.IsEraserMode, Mode=TwoWay}" MinWidth="0" Padding="6">
+                <SymbolIcon Symbol="{x:Bind StrokeErase}"/>
+            </RadioButton>
+        </RadioButtons>
+        <Button VerticalAlignment="Center" Padding="6" Click="OpenOptions">
+            <Button.Resources>
+                <windows:MicaWindow x:Name="OptionsWindow">
+                    <StackPanel Spacing="16" HorizontalAlignment="Center" Margin="8">
+                        <ColorPicker Color="{x:Bind Selected.Color, Mode=TwoWay}" MinWidth="300"/>
+                        <Slider Value="{x:Bind Selected.PenSize, Mode=TwoWay}" Minimum="1" Maximum="50" MinWidth="300"/>
+                    </StackPanel>
+                </windows:MicaWindow>
+            </Button.Resources>
+            <SymbolIcon Symbol="Setting"></SymbolIcon>
+            
+        </Button>
+        <ToggleButton IsChecked="{x:Bind InkingWindow.IsRulerVisible, Mode=TwoWay}" VerticalAlignment="Center" Padding="6">
+            <SymbolIcon Symbol="{x:Bind Ruler}"></SymbolIcon>
+        </ToggleButton>
+        <ToggleButton IsChecked="{x:Bind InkingWindow.IsProtractorVisible, Mode=TwoWay}" VerticalAlignment="Center" Padding="6">
+            <SymbolIcon Symbol="{x:Bind Protractor}"></SymbolIcon>
+        </ToggleButton>
+        <Button VerticalAlignment="Center" Padding="6" Click="ClearAllInkClicked">
+            <SymbolIcon Symbol="{x:Bind ClearAllInk}"/>
+        </Button>
+        <Button VerticalAlignment="Center" Padding="6" Foreground="#FF6262" Click="CloseClicked">
+            <SymbolIcon Symbol="{x:Bind CloseSymbol}"/>
+        </Button>
+    </StackPanel>
+</windows:MicaWindow>

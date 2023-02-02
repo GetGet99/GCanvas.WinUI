@@ -1,0 +1,6 @@
+*/bin
+*/obj
+*/Package.StoreAssociation.xml
+*/*_TemporaryKey.pfx
+.vs
+.vscode

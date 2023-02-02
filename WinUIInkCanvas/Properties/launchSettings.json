@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUIInkCanvas (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUIInkCanvas (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
