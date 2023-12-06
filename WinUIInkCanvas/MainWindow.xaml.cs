@@ -12,8 +12,8 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Windows.UI;
 using WinRT.Interop;
-using Cursor = WinWrapper.Cursor;
-using Win32Window = WinWrapper.Window;
+using Cursor = WinWrapper.Input.Cursor;
+using Win32Window = WinWrapper.Windowing.Window;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -91,7 +91,7 @@ namespace WinUIInkCanvas
         private void OpenOptions(object sender, RoutedEventArgs e)
         {
             var appWindow = AppWindow.GetFromWindowId(new((ulong)WindowNative.GetWindowHandle(OptionsWindow)));
-            var bounds = System.Windows.Forms.Screen.FromHandle(WindowEx.Handle.Value).Bounds;
+            var bounds = System.Windows.Forms.Screen.FromHandle(WindowEx.Handle).Bounds;
             appWindow.MoveAndResize(new(Math.Clamp(Cursor.Position.X, 0, bounds.Width - 350), Math.Clamp(Cursor.Position.Y, 0, bounds.Height - 565), 350, 565));
             OptionsWindow.Activate();
         }
@@ -167,7 +167,7 @@ namespace WinUIInkCanvas
             WindowEx.Owner = Win32Window.FromWindowHandle(InkingWindow.CompositionWindow.Handle);
             InkingWindow.CompositionWindow.Form.TopMost = true;
 
-            var appWindow = AppWindow.GetFromWindowId(new((ulong)WindowEx.Handle.Value));
+            var appWindow = AppWindow.GetFromWindowId(new((ulong)WindowEx.Handle));
             var Presenter = (OverlappedPresenter)appWindow.Presenter;
             Presenter.IsMaximizable = Presenter.IsMinimizable = Presenter.IsResizable = false;
             Presenter.IsAlwaysOnTop = true;

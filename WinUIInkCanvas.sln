@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUIInkCanvas", "WinUIInkCanvas\WinUIInkCanvas.csproj", "{19626840-AD43-475A-99F3-953A2F2FB841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinUIInkCanvas", "WinUIInkCanvas\WinUIInkCanvas.csproj", "{19626840-AD43-475A-99F3-953A2F2FB841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsHelper", "WinFormsHelper\WinFormsHelper.csproj", "{081C4EDB-DBED-47DB-923C-CB09B6914B6E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinWrapper", "WinWrapper\WinWrapper\WinWrapper.csproj", "{4BD96AB3-A149-4C90-9329-04F1B198077E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsHelper", "WinFormsHelper\WinFormsHelper.csproj", "{081C4EDB-DBED-47DB-923C-CB09B6914B6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,22 +59,6 @@ Global
 		{081C4EDB-DBED-47DB-923C-CB09B6914B6E}.Release|x64.Build.0 = Release|Any CPU
 		{081C4EDB-DBED-47DB-923C-CB09B6914B6E}.Release|x86.ActiveCfg = Release|Any CPU
 		{081C4EDB-DBED-47DB-923C-CB09B6914B6E}.Release|x86.Build.0 = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|x64.Build.0 = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Debug|x86.Build.0 = Debug|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|ARM64.Build.0 = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|x64.ActiveCfg = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|x64.Build.0 = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|x86.ActiveCfg = Release|Any CPU
-		{4BD96AB3-A149-4C90-9329-04F1B198077E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
